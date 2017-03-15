@@ -30,9 +30,12 @@ git config
 可以查看其他设置命令
 命令：
 git config --global core.autocrlf true
-另外还有一条命令：
+签出时将换行符转换成CRLF，签入时转换回 LF。
 git config --global core.autocrlf input
-作用主要用于跨平台写作的时候换行符和回车符等问题。详细解释参见：http://blog.csdn.net/lysc_forever/article/details/42835203
+签出时不转换换行符，签入时转换回 LF
+git config --global core.autocrlf false
+签出签入均不转换
+作用主要用于跨平台写作的时候换行符和回车符等问题。详细解释参见：http://blog.csdn.net/wty__/article/details/53997786
 命令：
 git config --global color.ui auto
 应该是自动设置颜色，让我们看起来爽一点，印象中默认就是自动颜色了
@@ -44,3 +47,6 @@ git config --global color.ui auto
 命令：
 git diff
 就可以查看做出了哪些修改。
+命令：
+git diff--staged
+查看之前已经提交的跟暂存区域的内容有何不同。
