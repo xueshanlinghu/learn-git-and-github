@@ -23,6 +23,7 @@
 
 ### 设置你的名字和邮箱
 要保证你的项目的产权，你需要提前设置下你的账户的用户名和邮箱，这个通常只需要设置一次全局就好。
+
 命令：
 
     git config --global user.name xueshanlinghu
@@ -32,6 +33,7 @@
     git config --global user.email xueshanlinghu@xueshanlinghu.com
 
 这里的xueshanlinghu@xueshanlinghu.com换成你自己的邮箱
+
 使用命令：
 
     git config --global user.name
@@ -46,6 +48,7 @@
     git config
 
 可以查看其他设置命令
+
 命令：
 
     git config --global core.autocrlf true
@@ -70,30 +73,43 @@
 ### Diff
 你离开电脑一会儿（上个厕所什么的），回来的时候忘了刚才写了啥了，嗯，有这个可能的，你需要的东西就是Diff。
 如果你只修改了几个字就提交（commit），那么通常来讲你能记住发生了什么，但是通常你需要校验一下内容发生了怎样的改变。
-有三种主要方式来使用Diff。
+
 命令：
 
     git diff
 
 就可以查看做出了哪些修改。
+
 命令：
 
     git diff --staged
 
 查看之前已经提交的跟暂存区域的内容有何不同。
+
 命令：
 
     git diff HEAD
 
 将工作树和头一次提交相比较
+
 命令：
 
     git diff --color-words 或者 git diff --word-diff
 
 只显示单词的变化，这样对于长长的一整行的修改有
 
+命令：
+
+    git diff --stat
+
+可以只锁定文件间的变化
+
+`这真是一个伟大的命令，用好diff你就可以很好的管理你的项目变化了`
+
+
 ### 让git显示中文
 使用中文的同学们通常会遇到这种痛楚，查看不同（diff）或者提交查看缓存区域的文件的时候，通常都会看到中文的内容或者文件名呈现乱码的形态，这里如何让git支持中文呢？
+
 输入命令：
 
     git config --global core.quotepath false
