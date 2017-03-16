@@ -189,3 +189,20 @@ The commands that output paths (e.g. ls-files, diff), when not given the -z opti
 这时候你就可以登录云端的GitHub网页看看情况啦~
 
 这是我总结的，希望能对大家有所帮助！
+
+### 克隆一个云端项目到本地
+先有鸡还是先有蛋，这是一个问题。有的时候咱们是先有了云端的文件，或者Fork了一个别人的东西到自己的云端仓库，但是要弄到本地来搞一搞的时候，克隆就很重要了。
+
+如何克隆呢？
+
+首先需要到云端获取一个地址，https的SSH的应该都可以，个人使用的话几乎没啥区别。
+
+然后输入命令：
+
+    git clone git@github.com:xueshanlinghu/learn-git-and-github.git
+
+就会把这个项目克隆到本地了，git@github.com:xueshanlinghu/learn-git-and-github.git是我的项目地址，你可以换成你的，会自动生成一个叫做learn-git-and-github的文件夹来存放。如果你想要自己命名一个文件夹存放，在后面空格之后输入你的命名即可：
+
+    git clone git@github.com:xueshanlinghu/learn-git-and-github.git test
+
+这样就会克隆到本地一个叫做test的文件夹下。
