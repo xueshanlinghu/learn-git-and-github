@@ -8,6 +8,8 @@
 
 本文件使用markdown格式也就是md文件格式编写而成，如果你要在本地看到在GitHub的效果，请到[atom.io](http://atom.io)安装Atom，然后打开这个md文件后按快捷键Ctrl+Shift+M即可调出GitHub一样的效果预览。
 
+本文件的知识点可能不是很按顺序，因为中途会插入一些小东西刚学到的进去，如果有必要，可以使用搜索功能。
+
 首先使用git内置的命令提示符或者使用系统自带的命令提示符工具进入你要操作的文件夹下，比如我现在使用系统自带的CMD已经进入了如下目录：C:\Users\Administrator\Desktop\mygitproject>
 
 ### 初始化项目
@@ -118,3 +120,72 @@
 
 官方说明：
 The commands that output paths (e.g. ls-files, diff), when not given the -z option, will quote “unusual” characters in the pathname by enclosing the pathname in a double-quote pair and with backslashes the same way strings in C source code are quoted. If this variable is set to false, the bytes higher than 0x80 are not quoted but output as verbatim. Note that double quote, backslash and control characters are always quoted without -z regardless of the setting of this variable.
+
+### 向GitHub上传本地的项目
+不得不说在这一块的知识上，我走了好些个弯路，测试了挺久的才完成更新上传覆盖的功能。
+
+感谢一些网友的大力支持，以及廖雪峰git教程的知识让我有所进步。
+
+在这里把一些比较常用的命令弄出来好了，方便自己，方便他人。
+
+首先你需要先把本地的项目文件夹commit到要上传的版本。
+
+然后到C:\Users\Administrator\目录下看是否存在.ssh文件夹，如果存在则先删除。
+
+输入命令：
+
+    ssh-keygen -t rsa -C "xueshanlinghu@xueshanlinghu.com"
+
+请注意这里把上面的邮箱改成你自己的。
+
+然后一路回车即可，因为不是什么军事目的，没必要按着提示输入密码啥的。结束后会在刚才说的C:\Users\Administrator\目录下生成.ssh文件夹，打开会有id_rsa和id_rsa.pub两个文件，第一个是私钥，不能告诉别人的，第二个是公钥，可以告诉别人。用记事本把后面那个公钥打开，在GitHub后台设置选择SSH and GPG keys，然后添加公钥进去，title你随意。
+
+这时候可以新建一个repo在云端，或者你已经有一个建好的也行。点击右边Clone or download按钮，点击Use SSH，复制地址下来，比如我的复制下来是这样子：
+
+    git@github.com:xueshanlinghu/learn-git-and-github.git
+
+这就是你的push地址。
+
+接着添加命令：
+
+    git remote add origin git@github.com:xueshanlinghu/learn-git-and-github.git
+
+这里就是连接你的远程仓库，命名为origin（你可以自己换名字）
+
+如果这一步出错，提示fatal: remote origin already exists.
+那么先输入这一句代码：
+
+    git remote rm origin
+
+再运行刚才的连接。
+
+第一次连接的时候会有这样的警告：
+
+    The authenticity of host 'github.com (xx.xx.xx.xx)' can't be established.
+    RSA key fingerprint is xx.xx.xx.xx.xx.
+    Are you sure you want to continue connecting (yes/no)?
+
+不用担心，输入yes回车就行，以后不会再出现了。
+
+连接成功后，输入如下代码进行push：
+
+    git push -u origin master
+
+请注意这适用于第一次推送！！！也就是云端的repo文件夹还没有东西的时候，如果已经有东西，会报错，推送不成功。这个问题，找寻许久终于解决。如果云端已经有东西，你需要覆盖云端的内容的话，请使用如下命令：
+
+    git push origin master
+
+这是才推送成功，比如出现类似这样的输出信息表示推送成功：
+
+    Counting objects: 4, done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (4/4), done.
+    Writing objects: 100% (4/4), 576 bytes | 0 bytes/s, done.
+    Total 4 (delta 3), reused 0 (delta 0)
+    remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+    To github.com:xueshanlinghu/learn-git-and-github.git
+       e4afef1..334e8b4  master -> master
+
+这时候你就可以登录云端的GitHub网页看看情况啦~
+
+这是我总结的，希望能对大家有所帮助！
