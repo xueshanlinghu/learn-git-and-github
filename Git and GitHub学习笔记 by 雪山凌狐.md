@@ -1,10 +1,10 @@
 本文件为雪山凌狐个人学习Git与GitHub的学习笔记，可以自由分享学习
 ======================================
 
-欢迎关注我的个人主页：[雪山凌狐教程](http：//www.xueshanlinghu.com)
+欢迎关注我的个人主页：[雪山凌狐教程](http://www.xueshanlinghu.com)
 -----------------------------------
-[![logo]](http://www.xueshanlinghu.com)
-[logo]: /images/logo.png "雪山凌狐教程网站logo"
+
+![logo](/images/logo.png "雪山凌狐教程网站logo")
 
 本文件使用markdown格式也就是md文件格式编写而成，如果你要在本地看到在GitHub的效果，请到[atom.io](http://atom.io)安装Atom，然后打开这个md文件后按快捷键Ctrl+Shift+M即可调出GitHub一样的效果预览。
 
