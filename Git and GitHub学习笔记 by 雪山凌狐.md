@@ -262,3 +262,5 @@ bat文件内部的代码可以参见：[我的提交bat文件](https://github.co
 与上一个小知识点同理，我编写了一个bat文件来自动推送（push）到GitHub，免去了每次都要输入一大堆字符的烦恼。
 
 bat文件内部的代码可以参见：[我的提交bat文件](https://github.com/xueshanlinghu/learn-git-and-github/blob/master/push.bat)
+
+如果是第一次提交看这个：[我的第一次提交bat文件](https://github.com/xueshanlinghu/learn-git-and-github/blob/master/push-first-time.bat)
