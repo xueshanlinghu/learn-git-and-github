@@ -121,6 +121,34 @@
 官方说明：
 The commands that output paths (e.g. ls-files, diff), when not given the -z option, will quote “unusual” characters in the pathname by enclosing the pathname in a double-quote pair and with backslashes the same way strings in C source code are quoted. If this variable is set to false, the bytes higher than 0x80 are not quoted but output as verbatim. Note that double quote, backslash and control characters are always quoted without -z regardless of the setting of this variable.
 
+# git提交此版本到本地仓库（commit)
+在你完成一些阶段性任务的时候，你需要把目前的文件提交到项目仓库中保存，只有commit之后，你今后不小心删除啊增加啊等等一些修改才能快速找回来。
+
+那么，如何commit（提交）到本地仓库呢？
+
+第一步，你需要添加你此次要提交的文件到暂存区，命令为：
+
+    git add filename
+
+这里，如果需要添加多个文件，后面加一个空格再加新的文件即可，此命令可以多次使用，如果文件名里面含有空格，则文件名请用双引号引起来，因此尽可能避免文件名弄空格。
+
+同时还有一种简便的方法，如果你需要添加项目文件夹里面所有修改过的文件的话，那么下面两条代码都可以批量添加，选一条用吧（注意大小写）：
+
+    git add .
+    git add -A
+
+添加完成以后，如果你要查看现在的添加状态可以用这个：
+
+    git status
+
+如果看到文件都是绿色（非红色）显示说明添加好了。
+
+接下来是提交，提交需要提供一些你这次提交了什么内容的信息：
+
+    git commit -m "your message"
+
+这里的your message改成你的，经过测试，支持中文。
+
 ### 向GitHub上传本地的项目
 不得不说在这一块的知识上，我走了好些个弯路，测试了挺久的才完成更新上传覆盖的功能。
 
