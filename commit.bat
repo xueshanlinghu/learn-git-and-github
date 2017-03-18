@@ -1,3 +1,9 @@
+REM 本文件撰写者：雪山凌狐
+REM 版本号：V1.0
+REM 时间：20170318
+REM 功能：自动把项目文件夹文件加入暂存并提交
+REM 文件编码：Utf-8无BOM格式编码
+
 @ echo off
 echo ----------------------git status before----------------------
 git status

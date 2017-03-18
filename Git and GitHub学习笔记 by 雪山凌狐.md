@@ -220,3 +220,6 @@ The commands that output paths (e.g. ls-files, diff), when not given the -z opti
 >!main.pyc
 
 例外我们使用感叹号来表示，有感叹号表示这个文件或者文件夹是例外，会包含在提交中。
+
+# 写一个批处理文件来提交
+你是否遇到过打开
