@@ -206,3 +206,17 @@ The commands that output paths (e.g. ls-files, diff), when not given the -z opti
     git clone git@github.com:xueshanlinghu/learn-git-and-github.git test
 
 这样就会克隆到本地一个叫做test的文件夹下。
+
+
+# 在git中忽略文件
+某些在本地项目文件夹中但是不打算提交commit的文件，需要进行文件忽略，那么可以在项目文件夹下创建一个叫做.gitignore的文件，在里面写上要忽略的文件夹或者文件名：
+
+>*.pyc
+
+>*.exe
+
+>my_db_config/
+
+>!main.pyc
+
+例外我们使用感叹号来表示，有感叹号表示这个文件或者文件夹是例外，会包含在提交中。
