@@ -27,6 +27,6 @@ Echo.
 echo ----------------------commit done----------------------------
 
 
-:end
+REM end
 Echo.
 echo --------------------We stop the bat now----------------------
