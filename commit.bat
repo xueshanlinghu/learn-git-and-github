@@ -1,6 +1,6 @@
 @ echo off
 rem 本文件撰写者：雪山凌狐
-rem 版本号：V1.0
+rem 版本号：V1.1
 rem 时间：20170318
 rem 功能：自动把项目文件夹文件加入暂存并提交
 rem 文件编码：Utf-8无BOM格式编码
@@ -9,7 +9,7 @@ echo ----------------------git status before----------------------
 git status
 echo.
 echo ----------------------git add file---------------------------
-git add .
+git add -A
 echo.
 echo ----------------------git status now-------------------------
 git status
